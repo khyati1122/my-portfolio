@@ -2,8 +2,8 @@
 
 My professional portfolio showcasing ML/AI projects and research.
 
-🔗 **Live at:** [yourname.vercel.app](https://yourname.vercel.app)  
-🔗 **Mirror:** [yourusername.github.io/portfolio](https://yourusername.github.io/portfolio)
+🔗 **Live at:** [khyatiamin.vercel.app](https://khyatiamin.vercel.app)  
+🔗 **Mirror:** [khyati1122.github.io/portfolio](https://khyati1122.github.io/my-portfolio)
 
 ## Tech Stack
 - HTML5, CSS3, JavaScript

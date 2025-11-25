@@ -8,7 +8,6 @@ My professional portfolio showcasing ML/AI projects and research.
 ## Tech Stack
 - HTML5, CSS3, JavaScript
 - Responsive Design
-- Dark/Light Mode
 - Deployed on Vercel + GitHub Pages
 ```
 

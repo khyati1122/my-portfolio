@@ -1,0 +1,93 @@
+/* Container & Layout Structure */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: var(--z-base);
+}
+
+/* Header Layout */
+.header {
+    max-width: 1200px;
+    margin: 0 auto var(--spacing-xl) auto;
+    padding: 0 var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: var(--z-header);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-dark);
+}
+
+.nav {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--color-dark);
+    opacity: 0.7;
+    transition: opacity var(--transition-speed);
+}
+
+.nav-link:hover {
+    opacity: 1;
+}
+
+/* Main Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, minmax(150px, 1fr));
+    gap: var(--grid-gap-mobile);
+    min-height: 80vh;
+}
+
+/* Grid Item Positioning - Mobile First */
+.item-0 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.item-1 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.item-2 {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.item-3 {
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.item-4 {
+    grid-column: 1;
+    grid-row: 5;
+}
+
+.item-5 {
+    grid-column: 1;
+    grid-row: 6;
+}
+
+/* Footer Layout */
+.footer {
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    margin-top: var(--spacing-xl);
+    color: var(--color-gray);
+    opacity: 0.7;
+    font-size: 0.875rem;
+    position: relative;
+    z-index: var(--z-base);
+}

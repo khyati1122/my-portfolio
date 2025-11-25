@@ -1,0 +1,158 @@
+/* Desktop Layout - 768px and up */
+@media (min-width: 768px) {
+    /* Update grid to 3x3 */
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, minmax(200px, 1fr));
+        gap: var(--grid-gap-desktop);
+    }
+    
+    /* Desktop Grid Positioning */
+    .item-0 {
+        grid-column: 1;
+        grid-row: 1 / span 2;  /* Tall left card */
+    }
+    
+    .item-1 {
+        grid-column: 1 / span 2;
+        grid-row: 3;  /* Wide bottom card */
+    }
+    
+    .item-2 {
+        grid-column: 2 / span 2;
+        grid-row: 1;  /* Wide top card */
+    }
+    
+    .item-3 {
+        grid-column: 2;
+        grid-row: 2;  /* Middle card */
+    }
+    
+    .item-4 {
+        grid-column: 3;
+        grid-row: 2;  /* Middle right card */
+    }
+    
+    .item-5 {
+        grid-column: 3;
+        grid-row: 3;  /* Bottom right card */
+    }
+    
+    /* Show/Hide Elements */
+    .mobile-only {
+        display: none;
+    }
+    
+    .desktop-only {
+        display: block;
+    }
+    
+    /* Larger text on desktop */
+    .card-title {
+        font-size: 2rem;
+    }
+    
+    .card-description {
+        font-size: 1.125rem;
+    }
+}
+
+/* Large Desktop - 1200px and up */
+@media (min-width: 1200px) {
+    .grid {
+        grid-template-rows: repeat(3, minmax(220px, 1fr));
+    }
+    
+    body {
+        padding: 40px;
+    }
+}
+
+/* Tablet Portrait - Between 600px and 768px */
+@media (min-width: 600px) and (max-width: 767px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, minmax(180px, 1fr));
+    }
+    
+    .item-0 {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+    }
+    
+    .item-1 {
+        grid-column: 1 / span 2;
+        grid-row: 4;
+    }
+    
+    .item-2 {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+    }
+    
+    .item-3 {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    
+    .item-4 {
+        grid-column: 2;
+        grid-row: 3;
+    }
+    
+    .item-5 {
+        grid-column: 1 / span 2;
+        grid-row: 5;
+    }
+}
+
+/* Small Mobile - Below 480px */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .grid {
+        gap: 10px;
+        grid-template-rows: repeat(6, minmax(120px, 1fr));
+    }
+    
+    .item {
+        padding: var(--spacing-md);
+    }
+    
+    .card-title {
+        font-size: 1.25rem;
+    }
+    
+    .card-description {
+        font-size: 0.875rem;
+    }
+    
+    .btn-primary {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .header, .footer {
+        display: none;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .item {
+        break-inside: avoid;
+    }
+}

@@ -1,0 +1,165 @@
+/* Bento Card Styles */
+.item {
+    background-color: var(--color-gray);
+    color: var(--color-white);
+    border-radius: var(--radius-lg);  /* Starting at 32px */
+    padding: var(--spacing-lg);
+    font-size: var(--font-size-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    
+    /* box-shadow: none; */
+    
+    /* Smooth, gentle transition for border-radius and shadows */
+    transition: border-radius 0.8s cubic-bezier(0.23, 1, 0.32, 1),
+                box-shadow 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Hover Effects - Gentle corner rounding with color-matched glow */
+.item:hover {
+    border-radius: 52px;  /* Becomes rounder */
+    z-index: 10;
+}
+
+/* Individual card hover shadows, shadow colour according to card colour */
+.item-0:hover {
+    box-shadow: 
+        0 8px 32px rgba(200, 182, 247, 0.8),  /* Purple glow - stronger */
+        0 0 60px rgba(200, 182, 247, 0.4);    
+}
+
+.item-1:hover {
+    box-shadow: 
+        0 8px 32px rgba(255, 177, 153, 0.8),  /* Coral glow - stronger */
+        0 0 60px rgba(255, 177, 153, 0.4);
+}
+
+.item-2:hover {
+    box-shadow: 
+        0 8px 32px rgba(255, 158, 199, 0.8),  /* Pink glow - stronger */
+        0 0 60px rgba(255, 158, 199, 0.4);
+}
+
+.item-3:hover {
+    box-shadow: 
+        0 8px 32px rgba(184, 212, 160, 0.8),  /* Green glow - stronger */
+        0 0 60px rgba(184, 212, 160, 0.4);
+}
+
+.item-4:hover {
+    box-shadow: 
+        0 8px 32px rgba(255, 217, 61, 0.8),   /* Yellow glow - stronger */
+        0 0 60px rgba(255, 217, 61, 0.4);
+}
+
+.item-5:hover {
+    box-shadow: 
+        0 8px 32px rgba(158, 217, 229, 0.8),  /* Blue glow - stronger */
+        0 0 60px rgba(158, 217, 229, 0.4);
+}
+
+/* Individual Card Colors */
+.item-0 {
+    background: linear-gradient(135deg, var(--color-purple), #b19ff5);
+}
+
+.item-1 {
+    background: linear-gradient(135deg, var(--color-coral), #ff9980);
+}
+
+.item-2 {
+    background: linear-gradient(135deg, var(--color-pink), #ff8ab8);
+}
+
+.item-3 {
+    background: linear-gradient(135deg, var(--color-green), #a8c490);
+}
+
+.item-4 {
+    background: linear-gradient(135deg, var(--color-yellow), #ffc93d);
+}
+
+.item-5 {
+    background: linear-gradient(135deg, var(--color-blue), #8bc9d5);
+}
+
+/* Card Content */
+.card-content {
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+.card-title {
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-white);
+    font-weight: var(--font-weight-bold);
+}
+
+.card-description {
+    font-size: 1rem;
+    opacity: 0.9;
+    color: var(--color-white);
+    font-weight: var(--font-weight-normal);
+}
+
+/* Button Component */
+.btn-primary {
+    background: var(--color-dark);
+    color: var(--color-white);
+    padding: 0.75rem 2rem;
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-speed) var(--transition-ease);
+    display: inline-block;
+    font-weight: 500;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    background: var(--color-gray);
+}
+
+/* Card Animation on Load */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.item {
+    animation: fadeInUp 0.6s var(--transition-ease) forwards;
+}
+
+/* Stagger animation for each card */
+.item-0 { animation-delay: 0.1s; }
+.item-1 { animation-delay: 0.2s; }
+.item-2 { animation-delay: 0.3s; }
+.item-3 { animation-delay: 0.4s; }
+.item-4 { animation-delay: 0.5s; }
+.item-5 { animation-delay: 0.6s; }
+
+/* Decorative Background Pattern for Cards (optional) */
+.item::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 15px 15px;
+    transform: rotate(45deg);
+    pointer-events: none;
+}

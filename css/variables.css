@@ -1,0 +1,54 @@
+/* CSS Variables - Design System */
+:root {
+    /* Color Palette - Matching your bento design */
+    --color-purple: #C8B6F7;
+    --color-pink: #FF9EC7;
+    --color-green: #B8D4A0;
+    --color-yellow: #FFD93D;
+    --color-blue: #9ED9E5;
+    --color-coral: #FFB199;
+    
+    /* Neutral Colors */
+    --color-dark: #2D2D2D;
+    --color-gray: #444;
+    --color-light-gray: #f0f0f0;
+    --color-white: #ffffff;
+    
+    /* Spacing System */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Grid */
+    --grid-gap-mobile: 16px;
+    --grid-gap-desktop: 20px;
+    
+    /* Border Radius - Rounder corners as requested */
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 32px;  /* More rounded for cards */
+    --radius-xl: 40px;
+    
+    /* Typography */
+    --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    --font-size-base: 16px;
+    --font-size-lg: 150%;
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+    
+    /* Transitions */
+    --transition-speed: 0.3s;
+    --transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+    
+    /* Z-index layers */
+    --z-base: 1;
+    --z-header: 100;
+    --z-modal: 1000;
+}

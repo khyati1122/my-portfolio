@@ -156,3 +156,15 @@
         break-inside: avoid;
     }
 }
+
+@media (min-width: 768px) and (max-height: 800px) {
+    .container {
+        transform: scale(0.8);  /* Smaller for shorter screens */
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        transform: scale(0.9);  /* Less scaling on large screens */
+    }
+}

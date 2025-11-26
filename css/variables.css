@@ -8,6 +8,22 @@
     --color-blue: #9ED9E5;
     --color-coral: #FFB199;
     
+/* Typography - Updated with your font choices */
+    --font-heading: "DM Serif Text", serif;
+    --font-body: "Funnel Sans", sans-serif;
+    
+    /* Font weights for Funnel Sans */
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    
+    /* Font sizes */
+    --font-size-base: 16px;
+    --font-size-lg: 150%;
+
     /* Neutral Colors */
     --color-dark: #2D2D2D;
     --color-gray: #444;

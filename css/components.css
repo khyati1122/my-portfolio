@@ -94,36 +94,75 @@
     position: relative;
 }
 
+/* Card titles - Using DM Serif */
 .card-title {
-    font-size: 1.75rem;
+    font-family: var(--font-heading);  /* DM Serif Text */
+    font-size: 2rem;
     margin-bottom: var(--spacing-sm);
     color: var(--color-white);
-    font-weight: var(--font-weight-bold);
+    font-weight: 400;  /* DM Serif only has 400 */
 }
 
+/* Card descriptions - Using Funnel Sans */
 .card-description {
+    font-family: var(--font-body);  /* Funnel Sans */
+    font-weight: var(--font-weight-light);  /* Light weight for elegant look */
     font-size: 1rem;
     opacity: 0.9;
     color: var(--color-white);
-    font-weight: var(--font-weight-normal);
 }
 
-/* Button Component */
+/* Navigation links - Funnel Sans Medium */
+.nav-link {
+    font-family: var(--font-body);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-dark);
+    opacity: 0.7;
+    transition: opacity var(--transition-speed);
+}
+
+/* Button - Funnel Sans Semibold */
 .btn-primary {
+    font-family: var(--font-body);
+    font-weight: var(--font-weight-semibold);
     background: var(--color-dark);
     color: var(--color-white);
     padding: 0.75rem 2rem;
     border-radius: var(--radius-xl);
-    transition: all var(--transition-speed) var(--transition-ease);
-    display: inline-block;
-    font-weight: 500;
-    box-shadow: var(--shadow-sm);
+    /* ... rest of styles ... */
+}
+
+/* Logo - Could use either font */
+.logo {
+    font-family: var(--font-heading);  /* or var(--font-body) */
+    font-size: 1.5rem;
+    font-weight: 400;
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-md);
     background: var(--color-gray);
+}
+
+/* Typing Animation Preparation */
+.hero-title {
+    position: relative;
+    display: inline-block;
+}
+
+/* Optional: Add a cursor effect even before animation */
+.hero-title::after {
+    content: '|';
+    position: absolute;
+    right: -10px;
+    color: var(--color-dark);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
 }
 
 /* Card Animation on Load */

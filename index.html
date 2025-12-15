@@ -33,11 +33,42 @@
         <!-- Bento Grid -->
         <div class="grid">
             <!-- About Me Card -->
-            <div class="item item-0">
-                <div class="card-content">
-                    <h2 class="card-title">About Me</h2>
-                    <p class="card-description">Creative developer passionate about design</p>
+            <div class="item item-0 about-card">
+                <!-- Hidden radio inputs for interaction -->
+                <input type="radio" name="about-choice" id="developer" checked>
+                <input type="radio" name="about-choice" id="creative">
+                
+                <!-- Main question card -->
+                <div class="card card--question">
+                    <div class="card__content card__content--photo">
+                        <div class="photo-circle">
+                            <img src="assets/profile_nobg.png" alt="Khyati Amin" class="profile-img">
+                        </div>
+                    </div>
+                    <footer class="card__footer">
+                        <span class="footer-text footer-text--heading">Hi, I am Khyati Amin</span>
+                    </footer>
+                </div>                
+                
+                <!-- Answer card 1 -->
+                <div class="card card--answer card--developer">
+                    <div class="card__content">Data Scientist</div>
+                    <footer class="card__footer">
+                        <span class="footer-text">ML & AI</span>
+                    </footer>
                 </div>
+                
+                <!-- Answer card 2 -->
+                <div class="card card--answer card--creative">
+                    <div class="card__content">Problem Solver</div>
+                    <footer class="card__footer">
+                        <span class="footer-text">Innovation</span>
+                    </footer>
+                </div>
+                
+                <!-- Labels for clicking -->
+                <label for="creative"></label>
+                <label for="developer"></label>
             </div>
             
             <!-- Featured Project Card -->

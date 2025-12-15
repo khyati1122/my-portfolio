@@ -99,7 +99,6 @@
     font-family: var(--font-heading);  /* DM Serif Text */
     font-size: 2rem;
     margin-bottom: var(--spacing-sm);
-    color: var(--color-white);
     font-weight: 400;  /* DM Serif only has 400 */
 }
 
@@ -109,7 +108,6 @@
     font-weight: var(--font-weight-light);  /* Light weight for elegant look */
     font-size: 1rem;
     opacity: 0.9;
-    color: var(--color-white);
 }
 
 /* Navigation links - Funnel Sans Medium */
@@ -129,7 +127,6 @@
     color: var(--color-white);
     padding: 0.75rem 2rem;
     border-radius: var(--radius-xl);
-    /* ... rest of styles ... */
 }
 
 /* Logo - Could use either font */
@@ -201,4 +198,286 @@
     background-size: 15px 15px;
     transform: rotate(45deg);
     pointer-events: none;
+}
+
+/* .item-0 .card-title { color: var(--text-purple-dark); } */
+.item-0 .card-description { color: var(--text-purple-medium); }
+
+/* .item-1 .card-title { color: var(--text-coral-dark); } */
+.item-1 .card-description { color: var(--text-coral-medium); }
+
+/* .item-2 .card-title { color: var(--text-pink-dark); } */
+.item-2 .card-description { color: var(--text-pink-medium); }
+
+/* .item-3 .card-title { color: var(--text-green-dark); } */
+.item-3 .card-description { color: var(--text-green-medium); }
+
+/* .item-4 .card-title { color: var(--text-yellow-dark); } */
+.item-4 .card-description { color: var(--text-yellow-medium); }
+
+/* .item-5 .card-title { color: var(--text-blue-dark); } */
+.item-5 .card-description { color: var(--text-blue-medium); }
+
+/* Very dark shades option */
+.item-0 .card-title { color: #4A3869; }  /* Darker purple */
+.item-1 .card-title { color: #8B4332; }  /* Darker coral */
+.item-2 .card-title { color: #8B3A5C; }  /* Darker pink */
+.item-3 .card-title { color: #495C38; }  /* Darker green */
+.item-4 .card-title { color: #7A6200; }  /* Darker yellow */
+.item-5 .card-title { color: #2E616E; }  /* Darker blue */
+
+/* About Card - Cards Against Developers Style */
+.about-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 !important;
+}
+
+/* Hide radio inputs */
+.about-card input[type='radio'] {
+    visibility: hidden;
+    position: absolute;
+}
+
+/* Card Base Styles */
+.card {
+    background: #000;
+    border-radius: 1.25rem;
+    color: #fff;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
+    flex-shrink: 0;
+    font-family: var(--font-body);
+    font-size: 1.3rem;
+    font-weight: 700;
+    height: 280px;
+    width: 200px;
+    padding: 2rem;
+    position: absolute;
+    transition: transform 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* INITIAL STATE - Cards stacked closely */
+.card--question {
+    transform: rotate(-5deg) translateX(-10px);
+    z-index: 3;
+    background: var(--text-purple-dark);  /* Purple to match your theme */
+}
+
+.card--developer {
+    transform: rotate(-2deg) translateX(-5px);
+    z-index: 2;
+}
+
+.card--creative {
+    transform: rotate(2deg);
+    z-index: 1;
+}
+
+/* HOVER STATE - Cards spread out */
+.about-card:hover .card--question {
+    transform: translate(-40%, 0) rotate(-15deg);
+}
+
+.about-card:hover .card--developer {
+    transform: translate(40%, 0) rotate(15deg) translate(0, 10%);
+}
+
+.about-card:hover .card--creative {
+    transform: translate(40%, 0) rotate(15deg) translate(0, -10%);
+}
+
+/* Answer cards styling */
+.card--answer {
+    background: #fff;
+    color: var(--text-purple-dark);
+}
+
+/* Top-aligned label inside answer cards (used for 'Data Scientist') */
+.card__content--top {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    text-align: left;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-purple-dark);
+    z-index: 3;
+    transform: none; /* keep it horizontal */
+}
+
+/* Ensure regular content doesn't collide with the top label */
+.card--answer .card__content {
+    margin-top: 2.2rem; /* add top space so main content moves down */
+}
+
+/* Card content */
+.card__content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    line-height: 1.4;
+}
+
+/* Card footer */
+.card__footer {
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+.footer-text {
+    font-family: var(--font-body);
+    letter-spacing: 0.5px;
+}
+
+/* When cards are clicked (radio button interaction) */
+#developer:checked ~ .about-card:hover .card--developer {
+    transform: translate(40%, 0) rotate(15deg) translate(0, 15%);
+    z-index: 4;
+}
+
+#creative:checked ~ .about-card:hover .card--creative {
+    transform: translate(40%, 0) rotate(15deg) translate(0, 15%);
+    z-index: 4;
+}
+
+/* Clickable labels - only active on hover */
+.about-card label {
+    height: 336px;
+    width: 200px;
+    position: absolute;
+    cursor: pointer;
+    pointer-events: none;  /* Disabled by default */
+    z-index: -1;
+}
+
+.about-card:hover label {
+    pointer-events: auto;  /* Enable clicking only on hover */
+}
+
+.about-card:hover label[for='creative'] {
+    transform: translate(40%, 0) rotate(15deg) translate(0, -10%);
+}
+
+.about-card:hover label[for='developer'] {
+    transform: translate(40%, 0) rotate(15deg) translate(0, 10%);
+}
+
+/* Extra hover polish */
+.card {
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card {
+        height: 240px;
+        width: 170px;
+        font-size: 1.1rem;
+        padding: 1.5rem;
+    }
+    
+    /* Stacked state on mobile */
+    .card--question {
+        transform: rotate(-3deg) translateX(-5px);
+    }
+    
+    /* Spread on hover - mobile */
+    .about-card:hover .card--question {
+        transform: translate(-30%, 0) rotate(-12deg);
+    }
+    
+    .about-card:hover .card--developer,
+    .about-card:hover .card--creative {
+        transform: translate(30%, 0) rotate(12deg);
+    }
+}
+
+/* this is for the about me card */
+
+/* Photo card content */
+.card__content--photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+.photo-circle {
+    width: 198px;
+    height: 175px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e9baf4 0%, #ddb7de 100%); 
+    position: fixed;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Add a blurred halo behind */
+.photo-circle::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    /* background: linear-gradient(135deg, #f4e8ba 0%, #FFC93D 100%); */
+    background: linear-gradient(135deg, #e9baf4 0%, #ddb7de 100%);
+    filter: blur(10px);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+
+/* Profile image - circular but larger at top */
+.profile-img {
+    width: 225px;  /* Slightly smaller than circle */
+    height: 231px;
+    position: absolute;
+    top: -57px;  /* Pull up so head extends beyond */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    /* Circular crop */
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 20%;  /* Adjust to position face well */
+    /* Subtle shadow for depth */
+    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); */
+    filter: none;
+}
+
+/* Scale up by 20% */
+.card {
+    height: 336px;  /* 280px × 1.2 */
+    width: 240px;   /* 200px × 1.2 */
+    font-size: 1.56rem;  /* 1.3rem × 1.2 */
+    padding: 2.4rem;  /* 2rem × 1.2 */
+}
+
+/* Footer text with heading font */
+.footer-text--heading {
+    font-family: var(--font-heading);  /* Your DM Serif Text font */
+    font-size: 0.9rem;  /* Adjust size as needed */
+    font-weight: 400;
+    letter-spacing: 0;
+    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* If you want it bigger/more prominent */
+.card--question .footer-text--heading {
+    font-size: 1.1rem;
+    text-align: center;
+    width: 100%;
+    opacity: 1;
 }
